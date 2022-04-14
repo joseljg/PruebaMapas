@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PruebaMapas</string>
+    <string name="ir_a_mapas">ir a mapa</string>
+    <string name="home">home</string>
+    <string name="atras">atras</string>
+    <string name="localizacion">localizacion</string>
+    <string name="location_permission_denied">permiso de localizacion denegado</string>
+    <string name="permission_required_toast">permiso de localizacion requerido</string>
+    <string name="permission_rationale_location">permiso de localizacion</string>
+</resources>
