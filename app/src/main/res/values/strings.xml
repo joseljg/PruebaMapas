@@ -7,4 +7,8 @@
     <string name="location_permission_denied">permiso de localizacion denegado</string>
     <string name="permission_required_toast">permiso de localizacion requerido</string>
     <string name="permission_rationale_location">permiso de localizacion</string>
+    <string name="api_key">AQUI EL API KEY</string>
+    <string name="default_info_title">titulo por defecto</string>
+    <string name="default_info_snippet">snippet por defecto</string>
+    <string name="pick_place">destino seleccionado</string>
 </resources>

@@ -9,8 +9,4 @@
         android:icon="@drawable/home"
         android:title="@string/home"
         app:showAsAction="ifRoom" />
-    <item android:id="@+id/ir_mapa1_localizacion"
-        android:icon="@drawable/localizacion2"
-        android:title="@string/localizacion"
-        app:showAsAction="ifRoom" />
 </menu>
