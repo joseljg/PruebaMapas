@@ -60,7 +60,6 @@ public class Mapa1 extends AppCompatActivity implements GoogleMap.OnMyLocationBu
         ActivityCompat.OnRequestPermissionsResultCallback {
 
     private static final String TAG = Mapa1.class.getSimpleName();
-    private GoogleMap map;
     private CameraPosition cameraPosition;
 
     // The entry point to the Places API.
@@ -121,10 +120,9 @@ public class Mapa1 extends AppCompatActivity implements GoogleMap.OnMyLocationBu
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
         // obtengo los sitio del mapa
-        Sitio s1 = new Sitio("colegio Juan Alonso Rivas", 37.373286299317584, -3.7117379557998453);
-        Sitio s2 = new Sitio("ayuntamiento colomera", 37.36910317654226, -3.712712709694243);
+        Sitio s1 = new Sitio("Arroyo Vallegrande", 40.11565923378475, -3.62735932483097);
+        Sitio s2 = new Sitio("Ayuntamiento de Seseña", 40.10453083180023, -3.6972861916362174);
         sitiosMapa = new ArrayList<Sitio>();
         sitiosMapa.add(s1);
         sitiosMapa.add(s2);
@@ -134,8 +132,8 @@ public class Mapa1 extends AppCompatActivity implements GoogleMap.OnMyLocationBu
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        if (map != null) {
-            outState.putParcelable(KEY_CAMERA_POSITION, map.getCameraPosition());
+        if (mMap != null) {
+            outState.putParcelable(KEY_CAMERA_POSITION, mMap.getCameraPosition());
             outState.putParcelable(KEY_LOCATION, lastKnownLocation);
         }
         super.onSaveInstanceState(outState);
@@ -364,7 +362,7 @@ public class Mapa1 extends AppCompatActivity implements GoogleMap.OnMyLocationBu
      */
     // [START maps_current_place_show_current_place]
     private void showCurrentPlace() {
-        if (map == null) {
+        if (mMap == null) {
             return;
         }
         if (locationPermissionGranted) {
@@ -429,7 +427,7 @@ public class Mapa1 extends AppCompatActivity implements GoogleMap.OnMyLocationBu
             Log.i(TAG, "The user did not grant location permission.");
 
             // Add a default marker, because the user hasn't selected a place.
-            map.addMarker(new MarkerOptions()
+            mMap.addMarker(new MarkerOptions()
                     .title(getString(R.string.default_info_title))
                     .position(defaultLocation)
                     .snippet(getString(R.string.default_info_snippet)));
@@ -458,13 +456,13 @@ public class Mapa1 extends AppCompatActivity implements GoogleMap.OnMyLocationBu
 
                 // Add a marker for the selected place, with an info window
                 // showing information about that place.
-                map.addMarker(new MarkerOptions()
+                mMap.addMarker(new MarkerOptions()
                         .title(likelyPlaceNames[which])
                         .position(markerLatLng)
                         .snippet(markerSnippet));
 
                 // Position the map's camera at the location of the marker.
-                map.moveCamera(CameraUpdateFactory.newLatLngZoom(markerLatLng,
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(markerLatLng,
                         DEFAULT_ZOOM));
             }
         };
@@ -482,16 +480,16 @@ public class Mapa1 extends AppCompatActivity implements GoogleMap.OnMyLocationBu
      */
     // [START maps_current_place_update_location_ui]
     private void updateLocationUI() {
-        if (map == null) {
+        if (mMap == null) {
             return;
         }
         try {
             if (locationPermissionGranted) {
-                map.setMyLocationEnabled(true);
-                map.getUiSettings().setMyLocationButtonEnabled(true);
+                mMap.setMyLocationEnabled(true);
+                mMap.getUiSettings().setMyLocationButtonEnabled(true);
             } else {
-                map.setMyLocationEnabled(false);
-                map.getUiSettings().setMyLocationButtonEnabled(false);
+                mMap.setMyLocationEnabled(false);
+                mMap.getUiSettings().setMyLocationButtonEnabled(false);
                 lastKnownLocation = null;
                 getLocationPermission();
             }
