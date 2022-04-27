@@ -1,8 +1,9 @@
 package es.joseljg.pruebamapas.clases;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Sitio {
+public class Sitio implements Serializable {
     private String nombreSitio;
     private double latitud;
     private double longitud;

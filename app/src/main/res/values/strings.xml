@@ -5,10 +5,10 @@
     <string name="atras">atras</string>
     <string name="localizacion">localizacion</string>
     <string name="location_permission_denied">permiso de localizacion denegado</string>
-    <string name="permission_required_toast">permiso de localizacion requerido</string>
+    <string name="permission_required_toast">mensaje de permiso de localizacion</string>
     <string name="permission_rationale_location">permiso de localizacion</string>
-    <string name="api_key">AQUI EL API KEY</string>
+    <string name="api_key">AIzaSyDSQ15p9uPZVFcgDCQCE86x6KEuNo1uGPY</string>
     <string name="default_info_title">titulo por defecto</string>
-    <string name="default_info_snippet">snippet por defecto</string>
+    <string name="default_info_snippet">fragmento por defecto</string>
     <string name="pick_place">destino seleccionado</string>
 </resources>
